@@ -1,0 +1,36 @@
+<app-sidebar>
+  <div class="home-container">
+    <div class="card bg-light mb-3">
+      <div class="card-header">
+        <div class="container-fluid">
+          <div class="row" style="flex-wrap: nowrap;">
+            <div class="col-lg-10">
+              <h4 style="margin-left: 20px; margin-top: 10px;">Cambiar Contraseña</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body" style="align-items: flex-start; text-align: left;">
+        <div class="has-success">
+          <label class="form-label" for="currentPassword">Ingresa tu contraseña actual</label>
+          <input type="password" [(ngModel)]="currentPassword" (input)="checkPassword()" style="width: 20rem;" class="form-control" id="currentPassword" *ngIf="passwordState === 'default'">
+          <input type="password" [(ngModel)]="currentPassword" style="width: 20rem;" class="form-control is-valid" id="currentPassword" *ngIf="passwordState === 'valid'">
+          <input type="password" [(ngModel)]="currentPassword" style="width: 20rem;" class="form-control is-invalid" id="currentPassword" *ngIf="passwordState === 'invalid'">
+          <div class="valid-feedback" *ngIf="passwordState === 'valid'">Contraseña correcta!</div>
+          <div class="invalid-feedback" *ngIf="passwordState === 'invalid'">Contraseña Incorrecta</div>
+          <button type="button" class="btn btn-success" style="margin-top: 10px;" (click)="verifyPassword()">Aceptar</button>
+        </div>
+        <fieldset [disabled]="passwordState !== 'valid'">
+          <div class="has-success">
+            <label class="form-label" style="margin-top: 15px;" for="newPassword">Ingresa tu Nueva Contraseña</label>
+            <input type="password" [(ngModel)]="newPassword" style="width: 20rem;" class="form-control" id="newPassword">
+            <label class="form-label" style="margin-top: 10px;" for="confirmNewPassword">Confirma tu Nueva Contraseña</label>
+            <input type="password" [(ngModel)]="confirmNewPassword" style="width: 20rem;" class="form-control" id="confirmNewPassword">
+            <div class="invalid-feedback" *ngIf="newPassword !== confirmNewPassword">Contraseñas No Coinciden</div>
+            <button type="button" style="margin-top: 10px;" class="btn btn-success" (click)="changePassword()" [disabled]="newPassword !== confirmNewPassword">Aceptar</button>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+</app-sidebar>

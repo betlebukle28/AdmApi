@@ -1,0 +1,24 @@
+/* src/app/datos/datos.component.css */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200vh;
+    width: 1000vh;
+  }
+  
+  .card {
+    cursor: pointer;
+    margin: 0px;
+  }
+  
+  .icon {
+    max-width: 60px; /* Ajusta el tamaño de la imagen según sea necesario */
+    margin-bottom: 0px;
+    margin-left: 20px;
+  }
+
+    .logo {
+    max-width: 200px; /* Ajusta el tamaño de la imagen según sea necesario */
+    margin-bottom: 0px;
+  }

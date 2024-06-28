@@ -1,0 +1,48 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    text-align: center;
+  }
+  
+  .logo {
+    max-width: 120px;
+    margin-bottom: 20px;
+  }
+
+  .logo-container {
+    margin-bottom: 0px;
+    padding-bottom: 100px;
+  }
+
+  .cardlogo {
+    max-width: 200px; 
+    margin-bottom: 20px;
+  }
+
+  .icon {
+    max-width: 60px; 
+    margin-bottom: 0px;
+    margin-left: 20px;
+  }
+  
+  h2 {
+    color: #333;
+  }
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+  }
+
+  .card {
+    cursor: pointer;
+    margin: 0px;
+    margin-right: 70px;
+  }
+  

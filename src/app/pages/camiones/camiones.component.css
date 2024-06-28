@@ -1,0 +1,48 @@
+/* src/app/home/home.component.css */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  text-align: center;
+}
+
+.logo {
+  max-width: 120px; /* Ajusta el tamaño de la imagen según sea necesario */
+  margin-bottom: 20px;
+}
+
+.logo-container {
+  margin-bottom: 0px;
+  padding-bottom: 50px;
+}
+
+.cardlogo {
+  max-width: 200px; /* Ajusta el tamaño de la imagen según sea necesario */
+  margin-bottom: 20px;
+}
+
+.icon {
+  max-width: 60px; /* Ajusta el tamaño de la imagen según sea necesario */
+  margin-bottom: 0px;
+  margin-left: 20px;
+}
+
+h2 {
+  color: #333;
+}
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.card {
+  cursor: pointer;
+  margin: 0px;
+  margin-right: 70px;
+}

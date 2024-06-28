@@ -1,0 +1,56 @@
+<!-- src/app/datos/datos.component.html -->
+<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+  <div class="container-fluid">
+    
+    <a class="navbar-brand" href="#">
+      <img src="../../../assets/logos/Logo.jpg" alt="Logo" class="icon">
+             DEL BOSQUE                    
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="datos">DATOS                    
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="XmlPage">XML</a>
+        </li>
+      </ul>
+        <form class="d-flex">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="Perfil">PERFIL                    </a>
+            </li>
+          </ul>
+        </form>
+      
+    </div>
+  </div>
+</nav>
+  
+  <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="card text-center text-white bg-primary mb-3" style="max-width: 20rem;" (click)="navigateTo('Camion')"> 
+            <div class="card-header"></div>
+            <div class="card-body">
+              <img src="../../../assets/images/Camion.webp" alt="Logo" class="logo">
+              <h4 class="card-title">Camiones</h4>
+              <p class="card-text"></div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card text-center text-white bg-primary mb-3" style="max-width: 20rem;" (click)="navigateTo('Camion')"> 
+            <div class="card-header"></div>
+            <div class="card-body">
+              <img src="../../../assets/Icono/Operador.png" alt="Logo" class="logo">
+              <h4 class="card-title">Camiones</h4>
+              <p class="card-text"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
