@@ -23,7 +23,15 @@ import { ConductorEditarComponent } from './conductores/conductor-editar/conduct
 import { RelacionarHomeComponent } from './relacionar/relacionar-home/relacionar-home.component';
 import { RelacionarEditarComponent } from './relacionar/relacionar-editar/relacionar-editar.component'; 
 import { ConductorService } from './conductor.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { RelacionNuevoComponent } from './relacion/relacion-nuevo/relacion-nuevo.component';
+import { RelacionEditarComponent } from './relacion/relacion-editar/relacion-editar.component';
+import { RelacionDetalleComponent } from './relacion/relacion-detalle/relacion-detalle.component';
+import { RelacionarNuevoComponent } from './relacionar/relacionar-nuevo/relacionar-nuevo.component';
+import { RelacionarDetallesComponent } from './relacionar/relacionar-detalles/relacionar-detalles.component';
+import { TokenInterceptor } from './auth.interceptor';
+import { AuthService } from './auth.service';
+import { AuthGuard } from './guards/auth.guard';
 
 
 
@@ -48,6 +56,11 @@ import { HttpClientModule } from '@angular/common/http';
     ConductorEditarComponent,
     RelacionarHomeComponent,
     RelacionarEditarComponent,
+    RelacionNuevoComponent,
+    RelacionEditarComponent,
+    RelacionDetalleComponent,
+    RelacionarNuevoComponent,
+    RelacionarDetallesComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,7 +68,15 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

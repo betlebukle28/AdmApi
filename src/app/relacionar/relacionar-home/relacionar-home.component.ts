@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { FoliosService } from 'src/app/folios.service';
 
 @Component({
   selector: 'app-relacionar-home',
@@ -7,21 +8,54 @@ import { Router } from '@angular/router';
   styleUrls: ['./relacionar-home.component.css']
 })
 export class RelacionarHomeComponent {
+  relaciones: any[] = [];
+
+  // relaciones = {
+  //   Autotransporte: '',
+  //   FiguraTransporte: '',
+  //   FolioSuat: '',
+   
+  // };
+
   SaveState: 'valid' | 'invalid' | null = null;
-  constructor(private router: Router) { }
+
+  constructor(
+    private router: Router,
+    private foliosService: FoliosService
+  ) { }
+
+  ngOnInit(): void {
+    this.obtenerRelaciones();
+  }
+
+  obtenerRelaciones() {
+    this.foliosService.listarRelaciones().subscribe(
+      data => {
+        this.relaciones = data;
+        console.log(this.relaciones);
+      },
+      
+      error => {
+        console.error('Error al obtener las relaciones:', error);
+      }
+    );
+  }
 
   navigateTo(page: string) {
     this.router.navigate([page]);
   }
 
-  confirmAndDelete() {
-    const confirmed = confirm("¿Estás seguro de que deseas eliminar este conductor?");
-    if (confirmed) {
-      // Aquí llamas a tu servicio para eliminar el camión de la base de datos
-      console.log("Camión eliminado");
-      // Lógica para eliminar el camión va aquí
-    } else {
-      console.log("Eliminación cancelada");
+  confirmAndDelete(id: string) {
+    if (confirm('¿Estás seguro de que deseas eliminar esta relacion?')) {
+      this.foliosService.eliminarRelacion(id).subscribe(
+        response => {
+          console.log('Conductor eliminado exitosamente:', response);
+          this.obtenerRelaciones(); // Actualiza la lista de conductores después de eliminar
+        },
+        error => {
+          console.error('Error al eliminar el conductor:', error);
+        }
+      );
     }
   }
 
@@ -33,12 +67,6 @@ export class RelacionarHomeComponent {
     }
   }
 
-  TiposFigura = {
-    TipoFigura: '01',    
-    RFCFigura: 'NumPermisoSCT1',
-    NumLicencia: 'a234567890',
-    NombreFigura: 'Juan Jose Bermejo Estrada',
-   
-  };
+  
   
 }

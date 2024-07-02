@@ -9,7 +9,7 @@ import { AuthService } from './auth.service';
 })
 export class ConductorService {
 
-  private apiUrl = 'http://localhost:3000/api'; // Base URL del endpoint de tu backend
+  private apiUrl = 'https://transportesdelbosque.com.mx/api'; // Base URL del endpoint de tu backend
 
   constructor(private http: HttpClient, private authService: AuthService) { }
 

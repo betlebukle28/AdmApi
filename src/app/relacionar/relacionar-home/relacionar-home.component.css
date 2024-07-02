@@ -1,67 +1,112 @@
+/* src/app/home/home.component.css */
+.logo {
+  max-width: 100%; /* Ajusta el tamaño de la imagen según sea necesario */
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.logo-container {
+  margin-bottom: 0px;
+  padding-bottom: 50px;
+}
+
+.row{
+  margin: 10px;
+}
+
+.cardlogo {
+  max-width: 80%; /* Ajusta el tamaño de la imagen según sea necesario */
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.nav-link{
+  margin-left: 50px;
+  margin-right: 50px;
+  cursor: pointer;
+}
+
+.icon {
+  max-width: 60px; /* Ajusta el tamaño de la imagen según sea necesario */
+  height: auto;
+  margin-bottom: 0px;
+  margin-left: 20px;
+}
+
+.icono {
+  max-width: 25px;
+  margin-bottom: 0px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
 .home-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    /* height: 15rem; */
-    text-align: center;
-    width: auto;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+
+
+h2 {
+  color: #333;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  max-width: 100%; 
+  overflow: hidden;
+}
+
+.card {
+  margin: 0px;
+  margin-right: 0px;
+  width: 100%;
   
-  .logo {
-    max-width: 120px; 
-    margin-bottom: 20px;
-  }
-  
-  .logo-container {
-    margin-bottom: 0px;
-    padding-bottom: 50px;
-  }
-  
-  .cardlogo {
-    max-width: 200px; 
-    margin-bottom: 20px;
-  }
-  
-  .icon {
-    max-width: 60px; 
-    margin-bottom: 0px;
-    margin-left: 20px;
-  }
-  
-  h2 {
-    color: #333;
-  }
+}
+
+
+@media (min-width: 576px) {
   .card-container {
-    display: flexbox;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 1000vh;
-    text-align: center;
+    flex-direction: row; 
+    flex-wrap: wrap; 
   }
-  
+}
+
+@media (min-width: 768px) {
+  .home-container {
+    padding: 40px; 
+  }
+}
+
+  .card-container {
+    height: auto; 
+}
+
+@media (min-width: 992px) {
+  .card-container {
+    height: 50vh; 
+  }
+
   .card {
-    margin: 0px;
-    margin-right: 0px;
-    width: 90rem;
+    margin-right: 50px;
   }
-
-  .card-header{
-    text-align: left;
-  }
-
-  .icono {
-    max-width: 25px;
-    margin-bottom: 0px;
-    margin-left: 20px;
-    cursor: pointer;
-  }
-
-  .row{
-    margin-top: 20px;
-    margin-bottom: 15px;
-  }
+}
 
   .file-input-container {
     position: relative;

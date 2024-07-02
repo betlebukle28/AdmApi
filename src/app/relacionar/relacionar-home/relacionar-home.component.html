@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
     <div class="container-fluid">
       
-      <a class="navbar-brand" href="#">
+      <a style="cursor: pointer;" class="navbar-brand" (click)="navigateTo('')">
         <img src="../../../assets/logos/Logo.jpg" alt="Logo" class="icon">
                DEL BOSQUE                    
       </a>
@@ -11,17 +11,17 @@
       <div class="collapse navbar-collapse" id="navbarColor01">
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
-            <a class="nav-link" href="datos">ADMINISTRACION                    
+            <a class="nav-link" (click)="navigateTo('datos')">ADMINISTRACION                    
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="XmlPage">XML</a>
+            <a class="nav-link" (click)="navigateTo('XmlPage')">XML</a>
           </li>
         </ul>
           <form class="d-flex">
             <ul class="navbar-nav me-auto">
               <li class="nav-item">
-                <a class="nav-link" href="Perfil">PERFIL                    </a>
+                <a class="nav-link" (click)="navigateTo('Perfil')">PERFIL                    </a>
               </li>
             </ul>
           </form>
@@ -31,11 +31,11 @@
   </nav>
   
   <div class="container-fluid">
-    <div class="row" style="flex-wrap: nowrap;">
-      <div class="col-lg-10">
+    <div class="row" >
+      <div class="col-lg-4">
         <p style="margin-left: 60px; margin-top: 40px;">Relacionar > Inicio</p>
         </div>
-      <div class="col-lg-10">
+        <div style="text-align: right;" class="col-lg-8">
       <button style="margin-left: 60px; margin-top: 40px;" type="button" class="btn btn-primary" (click)="navigateTo('Camion')">Regresar</button>
       </div>
     </div>
@@ -45,14 +45,14 @@
     <div class="card bg-light mb-3" >
       <div class="card-header">
         <div class="container-fluid">
-          <div class="row" style="flex-wrap: nowrap;">
-            <div class="col-lg-9">
-              <p style="margin-left: 20px; margin-top: 10px;">Catalogo Relaciones</p>
+          <div class="row">
+            <div class="col-lg-2">
+              <p style="margin-left: 20px;">Catalogo Relaciones</p>
               </div>
-            <div class="col-lg-3">
-            <button style="margin-left: 30px; margin-top: 10px;" type="button" class="btn btn-success " (click)="navigateTo('Camion')">+ Nueva Relacion</button>
+              <div style="text-align: right;" class="col-lg-10">
+            <button style="margin-left: 30px;" type="button" class="btn btn-success " (click)="navigateTo('relacionNuevo')">+ Nueva Relacion</button>
             <div class="file-input-container">
-              <label for="formFile" class="btn btn-warning" style="margin-top: 10px;">Importar XLS</label>
+              <label for="formFile" class="btn btn-warning">Importar XLS</label>
               <input type="file" id="formFile" (change)="onFileSelected($event)" style="display: none;">
             </div>
             </div>
@@ -77,15 +77,15 @@
             </tr> -->
           </thead>
           <tbody>
-            <tr class="table-active">
-              <td>Juan Jose Bermejo Estrada</td>
-              <td>1425</td>
-              <td>K98</td>
+            <tr *ngFor="let relacion of relaciones" class="table-active">
+              <td>{{relacion.FiguraTransporte.NombreFigura}}</td>
+              <td>{{relacion.FolioSuat}}</td>
+              <td>{{relacion.Autotransporte.IdentificacionVehicular.PlacaVM}}</td>
               <td></td>
               <td>
-                <img (click)="navigateTo('conductorDetalle')" src="../../../assets/Icono/habilitar.png" class="icono">
-                <img (click)="navigateTo('conductorEditar')" src="../../../assets/Icono/editar_2.png" class="icono">
-                <img (click)="confirmAndDelete()" src="../../../assets/Icono/eliminar_2.png" class="icono">
+                <img (click)="navigateTo('relacionDetalle/' + relacion._id)" src="../../../assets/Icono/habilitar.png" class="icono">
+                <img (click)="navigateTo('relacionEditar/' + relacion._id)" src="../../../assets/Icono/editar_2.png" class="icono">
+                <img (click)="confirmAndDelete(relacion._id)" src="../../../assets/Icono/eliminar_2.png" class="icono">
               </td>
             </tr>
           </tbody>

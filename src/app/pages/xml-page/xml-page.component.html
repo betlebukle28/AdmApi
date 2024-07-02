@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
   <div class="container-fluid">
     
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" (click)="navigateTo('')">
       <img src="../../../assets/logos/Logo.jpg" alt="Logo" class="icon">
              DEL BOSQUE                    
     </a>
@@ -11,17 +11,17 @@
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link" href="datos">ADMINISTRACION                    
+          <a class="nav-link" (click)="navigateTo('datos')">ADMINISTRACION                    
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="XmlPage">XML</a>
+          <a class="nav-link" (click)="navigateTo('XmlPage')">XML</a>
         </li>
       </ul>
         <form class="d-flex">
           <ul class="navbar-nav me-auto">
             <li class="nav-item">
-              <a class="nav-link" href="Perfil">PERFIL                    </a>
+              <a class="nav-link" (click)="navigateTo('Perfil')">PERFIL                    </a>
             </li>
           </ul>
         </form>

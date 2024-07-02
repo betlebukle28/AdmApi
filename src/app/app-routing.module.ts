@@ -15,6 +15,9 @@ import { ConductorEditarComponent } from './conductores/conductor-editar/conduct
 import { ConductorDetalleComponent } from './conductores/conductor-detalle/conductor-detalle.component';
 import { ConductorNuevoComponent } from './conductores/conductor-nuevo/conductor-nuevo.component';
 import { RelacionarHomeComponent } from './relacionar/relacionar-home/relacionar-home.component';
+import { RelacionarEditarComponent } from './relacionar/relacionar-editar/relacionar-editar.component';
+import { RelacionarDetallesComponent } from './relacionar/relacionar-detalles/relacionar-detalles.component';
+import { RelacionarNuevoComponent } from './relacionar/relacionar-nuevo/relacionar-nuevo.component';
 import { AuthGuard } from './guards/auth.guard';
 
 
@@ -33,6 +36,10 @@ const routes: Routes = [
   { path: 'conductorDetalle/:id', component: ConductorDetalleComponent, canActivate: [AuthGuard] },
   { path: 'conductorNuevo', component: ConductorNuevoComponent, canActivate: [AuthGuard]},
   { path: 'relacionarHome', component: RelacionarHomeComponent, canActivate: [AuthGuard]},
+  { path: 'conductorNuevo', component: ConductorNuevoComponent, canActivate: [AuthGuard]},
+  { path: 'relacionNuevo', component: RelacionarNuevoComponent, canActivate: [AuthGuard]},
+  { path: 'relacionEditar/:id', component: RelacionarEditarComponent, canActivate: [AuthGuard] },
+  { path: 'relacionDetalle/:id', component: RelacionarDetallesComponent, canActivate: [AuthGuard] },
   { path: '**', redirectTo: '' } // Redirigir a Home en caso de una ruta no existente
 ];
 

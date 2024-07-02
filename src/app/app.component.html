@@ -1,2 +1,17 @@
-<!-- <app-header></app-header> -->
+<!-- app.component.html -->
+<div class="modal fade" id="sessionExpiredModal" tabindex="-1" aria-labelledby="sessionExpiredModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="sessionExpiredModalLabel">Sesión Expirada</h5>
+      </div>
+      <div class="modal-body">
+        La cuenta ha expirado, Favor de Iniciar sesión de nuevo.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="logout()">Iniciar Sesión</button>
+      </div>
+    </div>
+  </div>
+</div>
 <router-outlet></router-outlet>

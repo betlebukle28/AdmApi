@@ -1,16 +1,7 @@
 /* src/app/home/home.component.css */
-.home-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 15rem;
-  text-align: center;
-  width: auto;
-}
-
 .logo {
-  max-width: 120px; /* Ajusta el tamaño de la imagen según sea necesario */
+  max-width: 100%; /* Ajusta el tamaño de la imagen según sea necesario */
+  height: auto;
   margin-bottom: 20px;
 }
 
@@ -20,41 +11,95 @@
 }
 
 .cardlogo {
-  max-width: 200px; /* Ajusta el tamaño de la imagen según sea necesario */
+  max-width: 80%; /* Ajusta el tamaño de la imagen según sea necesario */
+  height: auto;
   margin-bottom: 20px;
+}
+
+.nav-link{
+  margin-left: 50px;
+  margin-right: 50px;
+  cursor: pointer;
 }
 
 .icon {
   max-width: 60px; /* Ajusta el tamaño de la imagen según sea necesario */
+  height: auto;
   margin-bottom: 0px;
   margin-left: 20px;
 }
 
-h2 {
-  color: #333;
+.icono {
+  max-width: 25px;
+  margin-bottom: 0px;
+  margin-left: 20px;
+  cursor: pointer;
 }
-.card-container {
-  display: flexbox;
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.home-container {
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 1000vh;
   text-align: center;
+  padding: 20px;
+}
+
+
+
+h2 {
+  color: #333;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  max-width: 100%; 
+  overflow: hidden;
 }
 
 .card {
   margin: 0px;
   margin-right: 0px;
-  width: 90rem;
+  width: 100%;
+  
 }
 
-.card-header{
-  text-align: left;
+
+@media (min-width: 576px) {
+  .card-container {
+    flex-direction: row; 
+    flex-wrap: wrap; 
+  }
 }
 
-.icono {
-  max-width: 25px; /* Ajusta el tamaño de la imagen según sea necesario */
-  margin-bottom: 0px;
-  margin-left: 20px;
-  cursor: pointer;
+@media (min-width: 768px) {
+  .home-container {
+    padding: 40px; 
+  }
+}
+
+  .card-container {
+    height: auto; 
+}
+
+@media (min-width: 992px) {
+  .card-container {
+    height: 50vh; 
+  }
+
+  .card {
+    margin-right: 50px;
+  }
 }

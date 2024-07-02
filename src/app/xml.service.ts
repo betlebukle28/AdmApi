@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class XmlService {
-  private apiUrl = 'http://localhost:3000/api';
+  private apiUrl = 'https://transportesdelbosque.com.mx/api';
 
   constructor(private http: HttpClient) { }
 

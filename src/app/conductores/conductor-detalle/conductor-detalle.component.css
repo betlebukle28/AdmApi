@@ -1,54 +1,78 @@
 .home-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    /* height: 15rem; */
-    text-align: center;
-    width: auto;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
   
-  .logo {
-    max-width: 120px; 
-    margin-bottom: 20px;
-  }
+.logo {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
   
-  .logo-container {
-    margin-bottom: 0px;
-    padding-bottom: 50px;
-  }
+.logo-container {
+  margin-bottom: 0px;
+  padding-bottom: 50px;
+}
   
-  .cardlogo {
-    max-width: 200px; 
-    margin-bottom: 20px;
-  }
-  
-  .icon {
-    max-width: 60px; 
-    margin-bottom: 0px;
-    margin-left: 20px;
-  }
+.cardlogo {
+  max-width: 80%; 
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.nav-link{
+  margin-left: 50px;
+  margin-right: 50px;
+  cursor: pointer;
+}
+
+.icon {
+  max-width: 60px; 
+  height: auto;
+  margin-bottom: 0px;
+  margin-left: 20px;
+}
   
   h2 {
     color: #333;
   }
+
   .card-container {
-    display: flexbox;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 1000vh;
     text-align: center;
+    max-width: 10px; 
+    overflow: hidden;
   }
-  
+
   .card {
     margin: 0px;
     margin-right: 0px;
-    width: 90rem;
+    width: 100%;
+    
   }
 
   .card-header{
     text-align: left;
+    
+  }
+
+  .row{
+    width: 100%;
+    
   }
 
   .icono {
@@ -57,9 +81,32 @@
     margin-left: 20px;
     cursor: pointer;
   }
-
-  .row{
-    margin-top: 20px;
-    margin-bottom: 15px;
-  }
   
+
+/* Media queries para hacer el diseño responsivo */
+@media (min-width: 576px) {
+  .card-container {
+    flex-direction: row; /* Cambia a diseño de filas en pantallas medianas y grandes */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea si es necesario */
+  }
+}
+
+@media (min-width: 768px) {
+  .home-container {
+    padding: 40px; /* Aumenta el padding en pantallas más grandes */
+  }
+
+  .card-container {
+    height: auto; /* Ajusta la altura para permitir más espacio para el contenido */
+  }
+}
+
+@media (min-width: 992px) {
+  .card-container {
+    height: 50vh; /* Ajusta la altura en pantallas muy grandes */
+  }
+
+  .card {
+    margin-right: 50px; /* Mantén el margen derecho solo en pantallas grandes */
+  }
+}

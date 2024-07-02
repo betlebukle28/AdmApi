@@ -1,0 +1,107 @@
+<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+    <div class="container-fluid">
+      
+      <a style="cursor: pointer;" class="navbar-brand" (click)="navigateTo('')">
+        <img src="../../../assets/logos/Logo.jpg" alt="Logo" class="icon">
+               DEL BOSQUE                    
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" (click)="navigateTo('datos')">ADMINISTRACION                    
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="navigateTo('XmlPage')">XML</a>
+          </li>
+        </ul>
+          <form class="d-flex">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link" (click)="navigateTo('Perfil')">PERFIL                    </a>
+              </li>
+            </ul>
+          </form>
+        
+      </div>
+    </div>
+  </nav>
+  <div class="alert alert-dismissible alert-success" *ngIf="SaveState === 'valid'">
+    <strong>Con Exito!</strong> Se han guardado los datos correctamente.
+  </div>
+  <div class="alert alert-dismissible alert-danger" *ngIf="SaveState === 'invalid'">
+    <strong>Error! </strong> <a class="alert-link">A surgido un error al guardar los datos.</a> Intente nuevamente.
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-4">
+        <p style="margin-left: 60px; margin-top: 40px;">Conductor > Conductores > Tabla Conductor > Detalles de Conductor</p>
+        </div>
+      <div class="col-lg-8" style="text-align: right;">
+      <button style="margin-right: 40px; margin-top: 40px;" type="button" class="btn btn-primary" (click)="navigateTo('relacionarHome')">Regresar</button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="home-container">
+    <div class="card bg-light mb-3">
+      <div class="card-header">
+        <div class="container-fluid">
+          <div class="row" style="flex-wrap: nowrap;">
+            <div class="col-lg-10">
+              <p style="margin-left: 20px; margin-top: 10px;">Detalles de la Relación</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <form (ngSubmit)="onSubmit()" #relacionForm="ngForm">
+          <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-2">
+              <div class="form-group">
+                <label for="conductor">Nombre Apellido</label>
+                <select class="form-control" id="conductor" [(ngModel)]="relaciones.conductor" name="conductor" required>
+                  <option value="" disabled selected>Seleccionar</option>
+                  <option *ngFor="let Conductor of Conductores" [value]="Conductor._id">{{Conductor.NombreFigura}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="form-group">
+                <label for="autotransporte">Placas del Camión</label>
+                <select class="form-control" id="autotransporte" [(ngModel)]="relaciones.autotransporte" name="autotransporte" required>
+                  <option value="" disabled selected>Seleccionar</option>
+                  <option *ngFor="let Autotransporte of Autotransportes" [value]="Autotransporte._id">{{Autotransporte.IdentificacionVehicular.PlacaVM}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-1">
+              <div class="form-group">
+                <label for="folioSuat">Folio</label>
+                <select class="form-control" id="folioSuat" [(ngModel)]="relaciones.folioSuat" name="folioSuat" required>
+                  <option value="" disabled selected>Seleccionar</option>
+                  <option *ngFor="let folio of Folios" [value]="folio.Folio">{{folio.Folio}}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row"></div>
+          <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+              <div class="d-grid gap-2">
+                <button class="btn btn-lg btn-success" type="submit" [disabled]="!relacionForm.form.valid">Guardar</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  
+  

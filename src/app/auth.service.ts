@@ -7,7 +7,6 @@ import { catchError, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-
   private apiUrl = 'http://localhost:3000/login'; // URL del endpoint de tu backend
 
   constructor(private http: HttpClient) { }
@@ -20,8 +19,18 @@ export class AuthService {
     localStorage.removeItem('authToken');
   }
 
+  isTokenExpired(token: string): boolean {
+    if (!token) {
+      return true;
+    }
+    const payload = JSON.parse(atob(token.split('.')[1]));
+    const exp = payload.exp;
+    return Date.now() >= exp * 1000;
+  }
+
   isLoggedIn(): boolean {
-    return localStorage.getItem('authToken') !== null;
+    const token = this.getToken();
+    return token !== null && !this.isTokenExpired(token);
   }
 
   getToken(): string | null {

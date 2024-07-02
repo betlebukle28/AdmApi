@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
   <div class="container-fluid">
     
-    <a class="navbar-brand" href="#">
+    <a style="cursor: pointer;" class="navbar-brand" (click)="navigateTo('')">
       <img src="../../../assets/logos/Logo.jpg" alt="Logo" class="icon">
              DEL BOSQUE                    
     </a>
@@ -11,17 +11,17 @@
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link" href="datos">ADMINISTRACION                    
+          <a class="nav-link" (click)="navigateTo('datos')">ADMINISTRACION                    
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="XmlPage">XML</a>
+          <a class="nav-link" (click)="navigateTo('XmlPage')">XML</a>
         </li>
       </ul>
         <form class="d-flex">
           <ul class="navbar-nav me-auto">
             <li class="nav-item">
-              <a class="nav-link" href="Perfil">PERFIL                    </a>
+              <a class="nav-link" (click)="navigateTo('Perfil')">PERFIL                    </a>
             </li>
           </ul>
         </form>
@@ -36,11 +36,11 @@
   <strong>Error! </strong> <a class="alert-link">A surgido un error al guardar los datos.</a> Intente nuevamente.
 </div>
 <div class="container-fluid">
-  <div class="row" style="flex-wrap: nowrap;">
-    <div class="col-lg-10">
+  <div class="row">
+    <div class="col-lg-4">
       <p style="margin-left: 60px; margin-top: 40px;">Camiones > Camiones > Tabla Camiones > Detalles de Camion</p>
       </div>
-    <div class="col-lg-10">
+      <div style="text-align: right;" class="col-lg-8">
     <button style="margin-left: 60px; margin-top: 40px;" type="button" class="btn btn-primary" (click)="navigateTo('camionConsulta')">Regresar</button>
     </div>
   </div>
