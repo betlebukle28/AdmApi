@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { CamionService } from 'src/app/camion.service';
 
 @Component({
   selector: 'app-camion-consulta',
@@ -7,20 +8,42 @@ import { Router } from '@angular/router';
   styleUrls: ['./camion-consulta.component.css']
 })
 export class CamionConsultaComponent {
-  constructor(private router: Router) { }
+  Autotransportes: any[] = [];
+
+  constructor(private router: Router, private camionService: CamionService) { }
+
+  ngOnInit(): void {
+    this.obtenerAutotransportes();
+  }
+
+  obtenerAutotransportes() {
+    this.camionService.obtenerAutotransportes().subscribe(
+      data => {
+        this.Autotransportes = data;
+        console.log(this.Autotransportes);
+
+      },
+      error => {
+        console.error('Error al obtener los conductores:', error);
+      }
+    );
+  }
 
   navigateTo(page: string) {
     this.router.navigate([page]);
   }
 
-  confirmAndDelete() {
-    const confirmed = confirm("¿Estás seguro de que deseas eliminar este camión?");
-    if (confirmed) {
-      // Aquí llamas a tu servicio para eliminar el camión de la base de datos
-      console.log("Camión eliminado");
-      // Lógica para eliminar el camión va aquí
-    } else {
-      console.log("Eliminación cancelada");
+  confirmAndDelete(id: string) {
+    if (confirm('¿Estás seguro de que deseas eliminar este conductor?')) {
+      this.camionService.eliminarAutotransporte(id).subscribe(
+        response => {
+          console.log('Conductor eliminado exitosamente:', response);
+          this.obtenerAutotransportes(); // Actualiza la lista de conductores después de eliminar
+        },
+        error => {
+          console.error('Error al eliminar el conductor:', error);
+        }
+      );
     }
   }
 }

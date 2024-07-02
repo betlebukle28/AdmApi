@@ -29,6 +29,12 @@
       </div>
     </div>
   </nav>
+  <div class="alert alert-dismissible alert-success" *ngIf="SaveState === 'valid'">
+    <strong>Con Exito!</strong> Se han guardado los datos correctamente.
+  </div>
+  <div class="alert alert-dismissible alert-danger" *ngIf="SaveState === 'invalid'">
+    <strong>Error! </strong> <a class="alert-link">A surgido un error al guardar los datos.</a> Intente nuevamente.
+  </div>
   <div class="container-fluid">
     <div class="row" style="flex-wrap: nowrap;">
       <div class="col-lg-10">
@@ -40,7 +46,7 @@
     </div>
   </div>
   
-  <div class="home-container" *ngIf="Autotransporte">
+  <div class="home-container">
     <div class="card bg-light mb-3">
       <div class="card-header">
         <div class="container-fluid">
@@ -52,36 +58,36 @@
         </div>
       </div>
       <div class="card-body">
-        <form>
+        <form (ngSubmit)="onSubmit()">
           <div class="row">
             <div class="col-md-2">
               <div class="form-group">
                 <label for="permSCT">Permiso SCT</label>
-                <input type="text" class="form-control" id="permSCT" [(ngModel)]="Autotransporte.PermSCT" name="permSCT" readonly>
+                <input type="text" class="form-control" id="permSCT" [(ngModel)]="camion.PermSCT" name="permSCT" required>
               </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-lg-3">
               <div class="form-group">
                 <label for="numPermisoSCT">Número Permiso SCT</label>
-                <input type="text" class="form-control" id="numPermisoSCT" [(ngModel)]="Autotransporte.NumPermisoSCT" name="numPermisoSCT" readonly>
+                <input type="text" class="form-control" id="numPermisoSCT" [(ngModel)]="camion.NumPermisoSCT" name="numPermisoSCT" required>
               </div>
             </div>
             <div class="col-md-2">
               <div class="form-group">
                 <label for="configVehicular">Configuración Vehicular</label>
-                <input type="text" class="form-control" id="configVehicular" [(ngModel)]="Autotransporte.IdentificacionVehicular.ConfigVehicular" name="configVehicular" readonly>
+                <input type="text" class="form-control" id="configVehicular" [(ngModel)]="camion.IdentificacionVehicular.ConfigVehicular" name="configVehicular" required>
               </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-lg-3">
               <div class="form-group">
                 <label for="pesoBrutoVehicular">Peso Bruto Vehicular</label>
-                <input type="text" class="form-control" id="pesoBrutoVehicular" [(ngModel)]="Autotransporte.IdentificacionVehicular.PesoBrutoVehicular" name="pesoBrutoVehicular" readonly>
+                <input type="text" class="form-control" id="pesoBrutoVehicular" [(ngModel)]="camion.IdentificacionVehicular.PesoBrutoVehicular" name="pesoBrutoVehicular" required>
               </div>
             </div>
             <div class="col-md-1">
               <div class="form-group">
                 <label for="placaVM">Placa VM</label>
-                <input type="text" class="form-control" id="placaVM" [(ngModel)]="Autotransporte.IdentificacionVehicular.PlacaVM" name="placaVM" readonly>
+                <input type="text" class="form-control" id="placaVM" [(ngModel)]="camion.IdentificacionVehicular.PlacaVM" name="placaVM" required>
               </div>
             </div>
           </div>
@@ -89,19 +95,19 @@
             <div class="col-md-2">
               <div class="form-group">
                 <label for="anioModeloVM">Año Modelo VM</label>
-                <input type="text" class="form-control" id="anioModeloVM" [(ngModel)]="Autotransporte.IdentificacionVehicular.AnioModeloVM" name="anioModeloVM" readonly>
+                <input type="text" class="form-control" id="anioModeloVM" [(ngModel)]="camion.IdentificacionVehicular.AnioModeloVM" name="anioModeloVM" required>
               </div>
             </div>
             <div class="col-md-3">
               <div class="form-group">
                 <label for="aseguraRespCivil">Aseguradora Responsabilidad Civil</label>
-                <input type="text" class="form-control" id="aseguraRespCivil" [(ngModel)]="Autotransporte.Seguros.AseguraRespCivil" name="aseguraRespCivil" readonly>
+                <input type="text" class="form-control" id="aseguraRespCivil" [(ngModel)]="camion.Seguros.AseguraRespCivil" name="aseguraRespCivil" required>
               </div>
             </div>
             <div class="col-md-2">
               <div class="form-group">
                 <label for="polizaRespCivil">Póliza Responsabilidad Civil</label>
-                <input type="text" class="form-control" id="polizaRespCivil" [(ngModel)]="Autotransporte.Seguros.PolizaRespCivil" name="polizaRespCivil" readonly>
+                <input type="text" class="form-control" id="polizaRespCivil" [(ngModel)]="camion.Seguros.PolizaRespCivil" name="polizaRespCivil" required>
               </div>
             </div>
           </div>
@@ -109,13 +115,19 @@
             <div class="col-md-2">
               <div class="form-group">
                 <label for="subTipoRem">Subtipo Remolque</label>
-                <input type="text" class="form-control" id="subTipoRem" [(ngModel)]="Autotransporte.Remolques.Remolque[0].SubTipoRem" name="subTipoRem" readonly>
+                <input type="text" class="form-control" id="subTipoRem" [(ngModel)]="camion.Remolques.Remolque[0].SubTipoRem" name="subTipoRem" required>
               </div>
             </div>
             <div class="col-md-2">
               <div class="form-group">
                 <label for="placa">Placa</label>
-                <input type="text" class="form-control" id="placa" [(ngModel)]="Autotransporte.Remolques.Remolque[0].Placa" name="placa" readonly>
+                <input type="text" class="form-control" id="placa" [(ngModel)]="camion.Remolques.Remolque[0].Placa" name="placa" required>
+              </div>
+            </div>
+            <div class="col-md-3"></div>
+            <div class="col-md-4">
+              <div class="d-grid gap-2">
+                <button class="btn btn-lg btn-success" type="submit">Guardar</button>
               </div>
             </div>
           </div>
@@ -123,4 +135,5 @@
       </div>
     </div>
   </div>
-
+  
+  

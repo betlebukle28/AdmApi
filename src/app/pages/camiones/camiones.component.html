@@ -1,9 +1,7 @@
 <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
   <div class="container-fluid">
-    
     <a class="navbar-brand" href="#">
-      <img src="../../../assets/logos/Logo.jpg" alt="Logo" class="icon">
-             DEL BOSQUE                    
+      <img src="../../../assets/logos/Logo.jpg" alt="Logo" class="icon"> DEL BOSQUE
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -11,59 +9,62 @@
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link" href="datos">DATOS                    
-          </a>
+          <a class="nav-link" href="datos">ADMINISTRACION</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="XmlPage">XML</a>
         </li>
       </ul>
-        <form class="d-flex">
-          <ul class="navbar-nav me-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="Perfil">PERFIL                    </a>
-            </li>
-          </ul>
-        </form>
-      
+      <form class="d-flex">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="Perfil">PERFIL</a>
+          </li>
+        </ul>
+      </form>
     </div>
   </div>
 </nav>
+
 <div class="container-fluid">
-  <div class="row" style="flex-wrap: nowrap;">
+  <div class="row">
     <div class="col-lg-10">
       <p style="margin-left: 60px; margin-top: 40px;">Camiones > Inicio</p>
-      </div>
-    <div class="col-lg-10">
-    <button style="margin-left: 60px; margin-top: 40px;" type="button" class="btn btn-primary" (click)="navigateTo('#')">Regresar</button>
+    </div>
+    <div class="col-lg-1">
+      <button style="margin-left: 60px; margin-top: 40px;" type="button" class="btn btn-primary" (click)="navigateTo('#')">Regresar</button>
     </div>
   </div>
 </div>
-<!-- <p style="margin-left: 60px; margin-top: 30px;">Camiones > Inicio</p> -->
 
 <div class="home-container">
-  <div class="logo-container">
-    <h2>Bienvenidos</h2>
-  </div>
-  <div class="row" style="flex-wrap: nowrap;">
-    <div class="col-lg-7">
-      <div class="card text-white bg-dark mb-3" style="max-width: 20rem;" (click)="navigateTo('camionConsulta')"> 
-          <div class="card-header"></div>
-          <div class="card-body">
-            <img src="../../../assets/images/Camion.webp" alt="Logo" class="cardlogo">
-            <h4 class="card-title">Camiones</h4>
-            <p class="card-text"></div>
+  <div class="row justify-content-center">
+    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+      <div class="card text-white bg-dark h-100" (click)="navigateTo('camionConsulta')">
+        <div class="card-body text-center">
+          <img src="../../../assets/images/Camion.webp" alt="Logo" class="cardlogo">
+          <h4 class="card-title">Camiones</h4>
+          <p class="card-text"></p>
+        </div>
       </div>
     </div>
-    <div class="col-lg-7">
-      <div class="card text-white bg-dark mb-3" style="max-width: 20rem;" (click)="navigateTo('conductorConsulta')"> 
-          <div class="card-header"></div>
-          <div class="card-body">
-            <img src="../../../assets/Icono/Operador.png" alt="Logo" class="cardlogo">
-            <h4 class="card-title">Conductores</h4>
-            <p class="card-text"></div>
+    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+      <div class="card text-white bg-dark h-100" (click)="navigateTo('conductorConsulta')">
+        <div class="card-body text-center">
+          <img src="../../../assets/Icono/Operador.png" alt="Logo" class="cardlogo">
+          <h4 class="card-title">Conductores</h4>
+          <p class="card-text"></p>
+        </div>
       </div>
     </div>
-    
+    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+      <div class="card text-white bg-dark h-100" (click)="navigateTo('relacionarHome')">
+        <div class="card-body text-center">
+          <img src="../../../assets/Icono/Relacionar.png" alt="Logo" class="cardlogo">
+          <h4 class="card-title">Relacionar</h4>
+          <p class="card-text"></p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

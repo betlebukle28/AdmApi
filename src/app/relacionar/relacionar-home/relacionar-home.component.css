@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    /* height: 15rem; */
     text-align: center;
     width: auto;
   }
@@ -60,5 +61,19 @@
   .row{
     margin-top: 20px;
     margin-bottom: 15px;
+  }
+
+  .file-input-container {
+    position: relative;
+    display: inline-block;
+    margin-left: 30px; 
+  }
+  
+  .file-input-container input[type="file"] {
+    display: none; /* Oculta el input de tipo file real */
+  }
+  
+  .file-input-container label {
+    cursor: pointer;
   }
   

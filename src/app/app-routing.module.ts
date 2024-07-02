@@ -9,6 +9,12 @@ import { ConductorConsultaComponent } from './pages/conductor-consulta/conductor
 import { CamionDetallesComponent } from './pages/camion-detalles/camion-detalles.component';
 import { PerfilComponent } from './features/perfil/perfil.component';
 import { LoginFormComponent } from './features/login-form/login-form.component';
+import { CamionEditarComponent } from './camion/camion-editar/camion-editar.component';
+import { CamionNuevoComponent } from './camion/camion-nuevo/camion-nuevo.component';
+import { ConductorEditarComponent } from './conductores/conductor-editar/conductor-editar.component';
+import { ConductorDetalleComponent } from './conductores/conductor-detalle/conductor-detalle.component';
+import { ConductorNuevoComponent } from './conductores/conductor-nuevo/conductor-nuevo.component';
+import { RelacionarHomeComponent } from './relacionar/relacionar-home/relacionar-home.component';
 import { AuthGuard } from './guards/auth.guard';
 
 
@@ -19,8 +25,14 @@ const routes: Routes = [
   { path: 'Camion', component: CamionesComponent, canActivate: [AuthGuard]},
   { path: 'camionConsulta', component: CamionConsultaComponent, canActivate: [AuthGuard] },
   { path: 'conductorConsulta', component: ConductorConsultaComponent, canActivate: [AuthGuard]},
-  { path: 'CamionDetalles', component: CamionDetallesComponent, canActivate: [AuthGuard]},
+  { path: 'CamionDetalles/:id', component: CamionDetallesComponent, canActivate: [AuthGuard] },
   { path: 'Perfil', component: PerfilComponent, canActivate: [AuthGuard]},
+  { path: 'camionEditar/:id', component: CamionEditarComponent, canActivate: [AuthGuard] },
+  { path: 'camionNuevo', component: CamionNuevoComponent, canActivate: [AuthGuard]},
+  { path: 'conductorEditar/:id', component: ConductorEditarComponent, canActivate: [AuthGuard] },
+  { path: 'conductorDetalle/:id', component: ConductorDetalleComponent, canActivate: [AuthGuard] },
+  { path: 'conductorNuevo', component: ConductorNuevoComponent, canActivate: [AuthGuard]},
+  { path: 'relacionarHome', component: RelacionarHomeComponent, canActivate: [AuthGuard]},
   { path: '**', redirectTo: '' } // Redirigir a Home en caso de una ruta no existente
 ];
 

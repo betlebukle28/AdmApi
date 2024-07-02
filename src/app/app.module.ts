@@ -14,7 +14,17 @@ import { ConductorConsultaComponent } from './pages/conductor-consulta/conductor
 import { CamionDetallesComponent } from './pages/camion-detalles/camion-detalles.component';
 import { PerfilComponent } from './features/perfil/perfil.component';
 import { SidebarComponent } from './pages/sidebar/sidebar.component';
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule } from '@angular/forms';
+import { CamionEditarComponent } from './camion/camion-editar/camion-editar.component';
+import { CamionNuevoComponent } from './camion/camion-nuevo/camion-nuevo.component';
+import { ConductorNuevoComponent } from './conductores/conductor-nuevo/conductor-nuevo.component';
+import { ConductorDetalleComponent } from './conductores/conductor-detalle/conductor-detalle.component';
+import { ConductorEditarComponent } from './conductores/conductor-editar/conductor-editar.component';
+import { RelacionarHomeComponent } from './relacionar/relacionar-home/relacionar-home.component';
+import { RelacionarEditarComponent } from './relacionar/relacionar-editar/relacionar-editar.component'; 
+import { ConductorService } from './conductor.service';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -31,10 +41,18 @@ import { FormsModule } from '@angular/forms';
     CamionDetallesComponent,
     PerfilComponent,
     SidebarComponent,
+    CamionEditarComponent,
+    CamionNuevoComponent,
+    ConductorNuevoComponent,
+    ConductorDetalleComponent,
+    ConductorEditarComponent,
+    RelacionarHomeComponent,
+    RelacionarEditarComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     FormsModule
   ],
   providers: [],
