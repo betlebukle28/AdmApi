@@ -1,31 +1,10 @@
-/* src/app/home/home.component.css */
-.logo {
-  max-width: 100%; /* Ajusta el tamaño de la imagen según sea necesario */
-  height: auto;
-  margin-bottom: 20px;
-}
-
-.logo-container {
-  margin-bottom: 0px;
-  padding-bottom: 50px;
-}
-
-.cardlogo {
-  max-width: 80%; /* Ajusta el tamaño de la imagen según sea necesario */
-  height: auto;
-  margin-bottom: 20px;
-}
-
-.nav-link{
-  margin-left: 50px;
-  margin-right: 50px;
-}
-
-.icon {
-  max-width: 60px; /* Ajusta el tamaño de la imagen según sea necesario */
-  height: auto;
-  margin-bottom: 0px;
-  margin-left: 20px;
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
 }
 
 body, html {
@@ -34,65 +13,73 @@ body, html {
   width: 100%;
   overflow-x: hidden;
 }
-
-.home-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 80vh;
-  text-align: center;
-  padding: 20px;
+  
+.logo {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+  
+.logo-container {
+  margin-bottom: 0px;
+  padding-bottom: 50px;
+}
+  
+.cardlogo {
+  max-width: 80%; 
+  height: auto;
+  margin-bottom: 20px;
 }
 
-
-
-h2 {
-  color: #333;
+.nav-link{
+  margin-left: 50px;
+  margin-right: 50px;
+  cursor: pointer;
 }
 
-.card-container {
+.icon {
+  max-width: 60px; 
+  height: auto;
+  margin-bottom: 0px;
+  margin-left: 20px;
+}
+  
+  h2 {
+    color: #333;
+  }
+
+  .card-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   padding: 10px;
-  max-width: 100%; /* Asegura que no se desborde */
-  overflow: hidden; /* Oculta cualquier desbordamiento */
+  max-width: 100%; 
+  overflow: hidden; 
 }
-
-.card {
-  cursor: pointer;
-  margin: 100px; /* Ajusta el margen entre las tarjetas */
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-/* Media queries para hacer el diseño responsivo */
-@media (min-width: 576px) {
-  .card-container {
-    flex-direction: row; /* Cambia a diseño de filas en pantallas medianas y grandes */
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea si es necesario */
-  }
-}
-
-@media (min-width: 768px) {
-  .home-container {
-    padding: 40px; /* Aumenta el padding en pantallas más grandes */
-  }
-
-  .card-container {
-    height: auto; /* Ajusta la altura para permitir más espacio para el contenido */
-  }
-}
-
-@media (min-width: 992px) {
-  .card-container {
-    height: 50vh; /* Ajusta la altura en pantallas muy grandes */
-  }
 
   .card {
-    margin-right: 50px; /* Mantén el margen derecho solo en pantallas grandes */
+    margin: 0px;
+    margin-right: 0px;
+    width: 100%;
+    
   }
-}
+
+  .card-header{
+    text-align: left;
+    
+  }
+
+  .row{
+    width: 100%;
+    
+  }
+
+  .icono {
+    max-width: 25px;
+    margin-bottom: 0px;
+    margin-left: 20px;
+    cursor: pointer;
+  }
+  
