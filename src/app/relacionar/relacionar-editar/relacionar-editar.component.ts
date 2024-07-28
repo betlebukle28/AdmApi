@@ -15,7 +15,12 @@ export class RelacionarEditarComponent implements OnInit {
   relaciones = {
     Autotransporte: '',
     FiguraTransporte: '',
-    folio: ''
+    folio: '',
+    fleteB: 0,
+    casetas: 0,
+    diesel: 0,
+    stops: 0,
+    total: 0,
   };
 
   SaveState: 'valid' | 'invalid' | null = null;
@@ -80,9 +85,15 @@ export class RelacionarEditarComponent implements OnInit {
         this.relaciones = {
           Autotransporte: data.Autotransporte._id,
           FiguraTransporte: data.FiguraTransporte._id,
-          folio: data.FolioSuat  // Asigna el valor del folio
+          folio: data.FolioSuat,  // Asigna el valor del folio,
+          fleteB: data.FleteBase,
+          casetas: data.Casetas,
+          diesel: data.Diesel,
+          stops: data.Stops,
+          total: data.Total,
         };
         console.log('Relación:', this.relaciones);
+        console.log('data: ', data);
       },
       error => {
         console.error('Error al obtener la relación:', error);

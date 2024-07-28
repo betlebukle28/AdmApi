@@ -15,7 +15,12 @@ export class RelacionarNuevoComponent implements OnInit {
   relaciones = {
     autotransporte: '',
     conductor: '',
-    folioSuat: ''
+    folioSuat: '',
+    fleteB: 0,
+    casetas: 0,
+    diesel: 0,
+    stops: 0,
+    total: 0,
   };
 
   SaveState: 'valid' | 'invalid' | null = null;
@@ -39,7 +44,7 @@ export class RelacionarNuevoComponent implements OnInit {
     this.foliosService.listarFolios().subscribe(
       data => {
         this.Folios = data;
-        // console.log(this.Folios);
+        console.log('Folios: ', this.Folios);
       },
       error => {
         console.error('Error al obtener los folios:', error);
@@ -72,7 +77,7 @@ export class RelacionarNuevoComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.relaciones.conductor && this.relaciones.autotransporte && this.relaciones.folioSuat) {
+    if (this.relaciones.conductor && this.relaciones.autotransporte && this.relaciones.folioSuat && this.relaciones.fleteB && this.relaciones.casetas && this.relaciones.diesel && this.relaciones.stops && this.relaciones.total) {
       console.log(this.relaciones);
       this.foliosService.guardarRelacion(this.relaciones).subscribe(
         response => {

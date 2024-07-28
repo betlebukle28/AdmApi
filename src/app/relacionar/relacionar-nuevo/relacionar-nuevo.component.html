@@ -37,10 +37,10 @@
   </div>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-lg-4">
+      <div class="col-lg-5">
         <p style="margin-left: 60px; margin-top: 40px;">Conductor > Conductores > Tabla Conductor > Detalles de Conductor</p>
         </div>
-      <div class="col-lg-8" style="text-align: right;">
+      <div class="col-lg-7" style="text-align: right;">
       <button style="margin-right: 40px; margin-top: 40px;" type="button" class="btn btn-primary" (click)="navigateTo('relacionarHome')">Regresar</button>
       </div>
     </div>
@@ -60,7 +60,7 @@
       <div class="card-body">
         <form (ngSubmit)="onSubmit()" #relacionForm="ngForm">
           <div class="row">
-            <div class="col-md-3"></div>
+            <div class="col-md-2"></div>
             <div class="col-md-2">
               <div class="form-group">
                 <label for="conductor">Nombre Apellido</label>
@@ -79,17 +79,53 @@
                 </select>
               </div>
             </div>
-            <div class="col-md-1">
+            <div class="col-md-2">
               <div class="form-group">
                 <label for="folioSuat">Folio</label>
-                <select class="form-control" id="folioSuat" [(ngModel)]="relaciones.folioSuat" name="folioSuat" required>
+                <select class="form-control" id="folioSuat"  [(ngModel)]="relaciones.folioSuat" name="folioSuat" required>
                   <option value="" disabled selected>Seleccionar</option>
                   <option *ngFor="let folio of Folios" [value]="folio.Folio">{{folio.Folio}}</option>
                 </select>
               </div>
             </div>
+            <div class="col-md-2">
+              <div class="form-group">
+                <label for="folioSuat">Flete Base</label>
+                <input class="form-control" [(ngModel)]="relaciones.fleteB" name="fleteB" required>
+              </div>
+            </div>
           </div>
-          <div class="row"></div>
+          <div class="row">
+            <div class="col-md-2"></div>
+           
+            <div class="col-md-2">
+              <div class="form-group">
+                <label for="folioSuat">Casetas</label>
+                <input class="form-control" [(ngModel)]="relaciones.casetas" name="casetas" required>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div class="form-group">
+                <label for="folioSuat">Diesel</label>
+                <input class="form-control" [(ngModel)]="relaciones.diesel" name="diesel" required>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div class="form-group">
+                <label for="folioSuat">Stops</label>
+                <input class="form-control" [(ngModel)]="relaciones.stops" name="stops" required>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div class="form-group">
+                <label for="folioSuat">Total</label>
+                <input class="form-control" [(ngModel)]="relaciones.total" name="total" required>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-2"></div>
+          </div>
           <div class="row">
             <div class="col-md-4"></div>
             <div class="col-md-4">

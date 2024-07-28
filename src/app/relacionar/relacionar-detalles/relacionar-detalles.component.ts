@@ -9,6 +9,16 @@ import { FoliosService } from 'src/app/folios.service';
 })
 export class RelacionarDetallesComponent implements OnInit {
   relacion: any = {};
+  relacionFolio = {
+    Autotransporte: '',
+    FiguraTransporte: '',
+    folio: '',
+    fleteB: 0,
+    casetas: 0,
+    diesel: 0,
+    stops: 0,
+    total: 0,
+  };
 
   constructor(
     private route: ActivatedRoute,
@@ -31,11 +41,32 @@ export class RelacionarDetallesComponent implements OnInit {
     this.foliosService.obtenerRelacionPorId(id).subscribe(
       data => {
         this.relacion = data;
-        console.log(this.relacion);
+        console.log('Relacion: ', this.relacion);
+        console.log('data: ', data);
+        this.relacionFolio = {
+          Autotransporte: this.relacion.FiguraTransporte.NombreFigura,
+          FiguraTransporte: this.relacion.Autotransporte.IdentificacionVehicular.PlacaVM,
+          folio: this.relacion.FolioSuat,
+          fleteB: this.relacion.FleteBase,
+          casetas: this.relacion.Casetas,
+          diesel: this.relacion.Diesel,
+          stops: this.relacion.Stops,
+          total: this.relacion.Total,
+        };
       },
       error => {
         console.error('Error al obtener la relación:', error);
       }
     );
+    // this.relacionFolio = {
+    //   Autotransporte: this.relacion.FiguraTransporte.NombreFigura,
+    //   FiguraTransporte: this.relacion.Autotransporte.IdentificacionVehicular.PlacaVM,
+    //   folio: this.relacion.FolioSuat,
+    //   fleteB: this.relacion.FleteBase,
+    //   casetas: this.relacion.Casetas,
+    //   diesel: this.relacion.Diesel,
+    //   stops: this.relacion.Stops,
+    //   total: this.relacion.Total,
+    // };
   }
 }
